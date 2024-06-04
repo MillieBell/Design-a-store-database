@@ -1,0 +1,38 @@
+echo "# Design-a-store-database" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/MillieBell/Design-a-store-database.git
+git push -u origin main
+
+/**
+Hair Rollers, White 15, Gray 12, Purple 10, price 6.99
+Body Butter, Mango Peach 10, Fresh Linen 10, Lavendar 7, price 8.99
+Lip Gloss, Ras Van 8, Bubble Gum 8, Cafe Leche 8, Sparkling Vanilla 8, price 10.00
+Beard oil, Vanilla 6, Mango 6, price 8.00
+Hoodies, Cropped 15, Waist 11, Long 7, price 15.99 **/
+
+CREATE TABLE MyStore (ID INTEGER PRIMARY KEY, Item TEXT, Descr TEXT, Qty TEXT, Price INTEGER);
+
+INSERT INTO MyStore VALUES (2010, "Hair Rollers", "White", 15, 6.99);
+INSERT INTO MyStore VALUES (2011, "Hair Rollers", "Gray", 12, 6.99);
+INSERT INTO MyStore VALUES (2012, "Hair Rollers", "Purple", 10, 6.99);
+INSERT INTO MyStore VALUES (2013, "Body Butter", "Mango Peach", 10, 8.99);
+INSERT INTO MyStore VALUES (2014, "Body Butter", "Fresh Linen", 10, 8.99);
+INSERT INTO MyStore VALUES (2015, "Body Butter", "Lavender", 7, 8.99);
+INSERT INTO MyStore VALUES (2016, "Lip Gloss", "Raspberry Vanilla", 8, 8.49);
+INSERT INTO MyStore VALUES (2017, "Lip Gloss", "Bubble Gum", 8, 8.49);
+INSERT INTO MyStore VALUES (2018, "Lip Gloss", "Cafe Leche", 8, 8.49);
+INSERT INTO MyStore VALUES (2019, "Lip Gloss", "Sparkling Vanilla", 8, 9.49);
+INSERT INTO MyStore VALUES (2020, "Beard Oil", "Vanilla", 6, 10.99);
+INSERT INTO MyStore VALUES (2021, "Beard Oil", "Mango", 6, 10.99);
+INSERT INTO MyStore VALUES (2022, "Hoodie", "Cropped", 15, 15.49);
+INSERT INTO MyStore VALUES (2023, "Hoodie", "Waist", 11, 15.99);
+INSERT INTO MyStore VALUES (2024, "Hoodie", "Long", 7, 16.49);
+
+
+SELECT * FROM MyStore WHERE Qty > 11;
+SELECT Id FROM MyStore WHERE Price < 10.99 ORDER BY Item;
+SELECT SUM(Qty) FROM MyStore;
+SELECT MAX(Price) FROM MyStore GROUP By Price;
